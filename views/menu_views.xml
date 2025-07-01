@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Top-level menu -->
+        <menuitem
+                id="menu_root"
+                name="Exam Management"
+                sequence="1"
+        />
+
+        <!-- Submenu: Exams -->
+        <menuitem
+                id="exams_list"
+                name="Exams"
+                parent="menu_root"
+                action="action_exam_list"
+                sequence="2"
+        />
+
+        <!-- Submenu: Exam Takers (Editable) -->
+        <menuitem
+                id="exam_takers"
+                name="Exam Takers"
+                parent="menu_root"
+                action="action_exam_taker"
+                sequence="3"
+        />
+
+        <!-- Optional: Submenu for Read-Only View -->
+        <menuitem
+                id="exam_takers_readonly"
+                name="Exam Takers"
+                parent="menu_root"
+                action="action_exam_takers_readonly"
+                sequence="4"
+        />
+
+        <menuitem
+                id="menu_job_role"
+                name="Job Role"
+                parent="exams_list"
+        />
+
+        <menuitem
+                id="menu_job_grade"
+                name="Job Grade"
+                parent="exams_list"
+        />
+
+        <menuitem
+                id="menu_exam_type"
+                name="Exam Type"
+                parent="menu_root"
+        />
+
+        <menuitem
+                id="menu_recruitment"
+                name="Recruitment"
+                parent="menu_exam_type"
+        />
+
+        <menuitem
+                id="menu_promotion"
+                name="Promotion"
+                parent="menu_exam_type"
+        />
+
+        <menuitem
+                id="menu_psychometric_assessments"
+                name="Psychometric Assessments"
+                parent="menu_exam_type"
+        />
+    </data>
+</odoo>

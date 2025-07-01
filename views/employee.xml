@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Editable Tree View -->
+        <record id="view_exam_taker_tree" model="ir.ui.view">
+            <field name="name">exam.takers.tree</field>
+            <field name="model">hr.employee</field>
+            <field name="arch" type="xml">
+                <tree string="Exam Takers">
+                    <field name="name"/>
+                    <field name="employee_code"/>
+                    <field name="company_id"/>
+                    <field name="job_grade"/>
+                    <field name="department_id"/>
+                    <field name="bank_branch"/>
+                    <field name="exam_result_ids"/>
+                    <field name="gender"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Editable Form View -->
+        <record id="view_exam_taker_form" model="ir.ui.view">
+            <field name="name">exam.takers.form</field>
+            <field name="model">hr.employee</field>
+            <field name="arch" type="xml">
+                <form string="Exam Taker">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="company_id"/>
+                            <field name="department_id"/>
+                            <field name="gender"/>
+                        </group>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids"/>
+                            <field name="message_ids"/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Editable Action -->
+        <record id="action_exam_taker" model="ir.actions.act_window">
+            <field name="name">Exam Takers</field>
+            <field name="res_model">hr.employee</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[
+                Command.clear(),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('view_exam_taker_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('view_exam_taker_form')})
+            ]"/>
+            <field name="help" type="html">
+                <p>Create a New Exam Taker</p>
+            </field>
+        </record>
+
+        <!-- Read-Only Tree View -->
+        <record id="view_exam_takers_tree_readonly" model="ir.ui.view">
+            <field name="name">exam.takers.tree.readonly</field>
+            <field name="model">hr.employee</field>
+            <field name="priority">20</field>
+            <field name="arch" type="xml">
+                <tree string="Exam Takers" create="0" delete="0" edit="0">
+                    <field name="name"/>
+                    <field name="company_id"/>
+                    <field name="job_grade"/>
+                    <field name="department_id"/>
+                    <field name="bank_branch"/>
+                    <field name="exam_result_ids"/>
+                    <field name="gender"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Read-Only Form View -->
+        <record id="view_exam_takers_form_readonly" model="ir.ui.view">
+            <field name="name">exam.takers.form.readonly</field>
+            <field name="model">hr.employee</field>
+            <field name="arch" type="xml">
+                <form string="Exam Taker">
+                    <sheet>
+                        <group>
+                            <field name="name" readonly="1"/>
+                            <field name="department_id" readonly="1"/>
+                            <field name="gender" readonly="1"/>
+                        </group>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids"/>
+                            <field name="message_ids"/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Read-Only Action -->
+        <record id="action_exam_takers_readonly" model="ir.actions.act_window">
+            <field name="name">Exam Takers</field>
+            <field name="res_model">hr.employee</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[
+                Command.clear(),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('view_exam_takers_tree_readonly')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('view_exam_takers_form_readonly')})
+            ]"/>
+             <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create a </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Tree View -->
+        <record id="view_exam_tree" model="ir.ui.view">
+            <field name="name">exam.management.tree</field>
+            <field name="model">exam.management</field>
+            <field name="arch" type="xml">
+                <tree string="Exams">
+                    <field name="name"/>
+                    <field name="exam_type"/>
+                    <field name="department_id"/>
+                    <field name="exam_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_exam_form" model="ir.ui.view">
+            <field name="name">exam.management.form</field>
+            <field name="model">exam.management</field>
+            <field name="arch" type="xml">
+                <form string="Exam">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="exam_type"/>
+                            <field name="job_grade"/>
+                            <field name="job_role"/>
+                            <field name="department_id"/>
+                            <field name="number_of_questions"/>
+                            <field name="passing_score"/>
+                            <field name="exam_date"/>
+                            <field name="duration_minutes"/>
+                            <field name="responsible_hr"/>
+                            <field name="question_file"/>
+                            <field name="is_mandatory"/>
+                            <field name="active"/>
+                            <field name="remarks"/>
+                            <field name="assigned_employees"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_exam_list" model="ir.actions.act_window">
+            <field name="name">Exams</field>
+            <field name="res_model">exam.management</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[
+                Command.clear(),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('view_exam_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('view_exam_form')})
+            ]"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create a new exam record</p>
+            </field>
+        </record>
+
+    </data>
+</odoo>
