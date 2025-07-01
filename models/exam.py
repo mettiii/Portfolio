@@ -38,3 +38,4 @@ class ExamManagement(models.Model):
 
     result_ids = fields.One2many('exam.result', 'exam_id', string="Exam Results")
     question_file = fields.Binary(string="Upload Questions (CSV)")
+    question_file_name = fields.Char(string='Question File Name')

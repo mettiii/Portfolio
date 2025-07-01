@@ -4,7 +4,7 @@
         <!-- Top-level menu -->
         <menuitem
                 id="menu_root"
-                name="Exam Management"
+                name=" Buna Bank Exam Management"
                 sequence="1"
         />
 
@@ -26,49 +26,5 @@
                 sequence="3"
         />
 
-        <!-- Optional: Submenu for Read-Only View -->
-        <menuitem
-                id="exam_takers_readonly"
-                name="Exam Takers"
-                parent="menu_root"
-                action="action_exam_takers_readonly"
-                sequence="4"
-        />
-
-        <menuitem
-                id="menu_job_role"
-                name="Job Role"
-                parent="exams_list"
-        />
-
-        <menuitem
-                id="menu_job_grade"
-                name="Job Grade"
-                parent="exams_list"
-        />
-
-        <menuitem
-                id="menu_exam_type"
-                name="Exam Type"
-                parent="menu_root"
-        />
-
-        <menuitem
-                id="menu_recruitment"
-                name="Recruitment"
-                parent="menu_exam_type"
-        />
-
-        <menuitem
-                id="menu_promotion"
-                name="Promotion"
-                parent="menu_exam_type"
-        />
-
-        <menuitem
-                id="menu_psychometric_assessments"
-                name="Psychometric Assessments"
-                parent="menu_exam_type"
-        />
     </data>
 </odoo>
