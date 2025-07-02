@@ -1,7 +1,7 @@
 {
     'name': 'Buna Bank Exam Management System',
     'author': 'Internship Projects',
-    'sequence': -300,
+    'sequence': -200,
     'license': 'LGPL-3',
     'version': '1.0',
     'depends': [

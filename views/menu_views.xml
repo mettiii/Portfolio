@@ -4,7 +4,7 @@
         <!-- Top-level menu -->
         <menuitem
                 id="menu_root"
-                name=" Buna Bank Exam Management"
+                name="Exam Management"
                 sequence="1"
         />
 
@@ -25,6 +25,5 @@
                 action="action_exam_taker"
                 sequence="3"
         />
-
     </data>
 </odoo>

@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields, api,_
 
 class ExamResult(models.Model):
     _name = 'exam.result'
