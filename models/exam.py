@@ -19,6 +19,8 @@ class ExamManagement(models.Model):
 
     question_ids = fields.Many2many('exam.question', string="Questions")
 
+    result_ids = fields.One2many('exam.result', 'exam_id', string="Exam Results")
+
     exam_type = fields.Selection([
         ('recruitment', 'Recruitment'),
         ('promotion', 'Promotion'),
@@ -73,3 +75,22 @@ class ExamManagement(models.Model):
                 })
 
                 record.question_ids = [(4, question.id)]
+
+    def generate_scorecards(self):
+        for result in self.result_ids:
+            # Assuming result.score holds the score for the candidate
+            score = result.score
+            feedback = self.provide_feedback(score)  # Implement feedback logic
+            self.env['candidate.scorecard'].create_scorecard(
+                candidate_id=result.employee_id.id,
+                exam_id=self.id,
+                score=score,
+                feedback=feedback
+            )
+
+    def provide_feedback(self, score):
+        """Provide feedback based on the score."""
+        if score >= self.passing_score:
+            return "Passed the exam."
+        else:
+            return "Failed the exam. Needs improvement."

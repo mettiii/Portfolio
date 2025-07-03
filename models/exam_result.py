@@ -16,3 +16,7 @@ class ExamResult(models.Model):
         for rec in self:
             passing = rec.exam_id.passing_score or 50.0  # Fallback to 50 if undefined
             rec.passed = rec.score >= passing
+
+    def action_print_scorecard(self):
+        return self.env.ref('exam_management.action_scorecard_report').report_action(self)
+
