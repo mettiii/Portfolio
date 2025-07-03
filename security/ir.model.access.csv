@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_exam_management,access.exam.management,model_exam_management,base.group_user,1,1,1,1
-access_exam_result_user,access.exam.result.user,model_exam_result,base.group_user,1,1,1,1
+access_exam_result,access.exam.result,model_exam_result,base.group_user,1,1,1,1
+
+
