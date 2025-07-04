@@ -1,4 +1,6 @@
-from odoo import models, fields
+from odoo import models, fields, api
+from odoo.exceptions import ValidationError
+from datetime import datetime
 import base64
 import csv
 import io
@@ -12,7 +14,8 @@ class ExamManagement(models.Model):
     department_id = fields.Many2one('hr.department', string="Department", required=True)
     number_of_questions = fields.Integer(string="Number of Questions")
     passing_score = fields.Float(string="Passing Score (%)")
-    exam_date = fields.Date(string="Exam Date")
+    # exam_date = fields.Date(string="Exam Date")
+    scheduled_datetime = fields.Datetime(string="Scheduled Date & Time")
     duration_minutes = fields.Integer(string="Duration (Minutes)")
     question_file = fields.Binary(string="Upload Questions (CSV)")
     question_file_name = fields.Char(string="File Name")
@@ -47,6 +50,12 @@ class ExamManagement(models.Model):
     result_ids = fields.One2many('exam.result', 'exam_id', string="Exam Results")
     question_file = fields.Binary(string="Upload Questions (CSV)")
     question_file_name = fields.Char(string='Question File Name')
+
+    @api.constrains('scheduled_datetime')
+    def _check_schedule_date(self):
+        for rec in self:
+            if rec.scheduled_datetime and rec.scheduled_datetime < fields.Datetime.now():
+                raise ValidationError("You cannot schedule an exam in the past.")
 
     def import_questions(self):
         for record in self:

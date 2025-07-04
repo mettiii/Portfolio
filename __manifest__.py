@@ -9,6 +9,7 @@
         'mail',
         'hr'
     ],
+    
     'data': [
         'security/ir.model.access.csv',
         'views/exam_views.xml',
@@ -16,7 +17,6 @@
         'views/exam_question_views.xml',
         'views/exam_result_views.xml',
         'views/exam_menu_views.xml',
-        'views/employee.xml',
         'views/exam_list.xml',
         'report/scorecard_report.xml',
 

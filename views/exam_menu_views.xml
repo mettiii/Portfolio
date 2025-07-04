@@ -6,17 +6,22 @@
     <!-- Submenu: Exams -->
     <menuitem id="exams_list" name="Exams" parent="menu_root" action="action_exam_list" sequence="4"/>
 
-     <!-- Submenu: Exam Takers (Editable) -->
+    <!-- Submenu: Exam Takers (Editable) -->
     <menuitem id="exam_takers" name="Exam Takers" parent="menu_root" action="action_exam_taker" sequence="5"/>
 
     <!-- Submenu: Exam Results -->
-    <menuitem id="menu_exam_results" name="Exam Results" parent="menu_root" action="action_exam_result" sequence="6"/>
+    <menuitem id="menu_exam_results"
+              name="Exam Results"
+              parent="menu_root"
+              action="action_exam_result"
+              sequence="6"/>
 
 
     <!-- Submenu: Manage Exams -->
     <menuitem id="menu_exam_setup" name="Manage Exams" parent="menu_root" action="action_exam_management" sequence="2"/>
 
     <!-- Submenu: Question Bank -->
-    <menuitem id="menu_exam_questions" name="Question Bank" parent="menu_root" action="action_exam_question_bank" sequence="3"/>
+    <menuitem id="menu_exam_questions" name="Question Bank" parent="menu_root" action="action_exam_question_bank"
+              sequence="3"/>
 
 </odoo>
