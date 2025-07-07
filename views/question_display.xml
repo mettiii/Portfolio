@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Action for Displaying Exam Questions -->
+        <record id="action_exam_question_display" model="ir.actions.act_window">
+            <field name="name">Display Exam Questions</field>
+            <field name="res_model">exam.question.display</field>
+            <field name="view_mode">form</field>
+            <field name="target">current</field>
+            <field name="context">{}</field>
+        </record>
+
+        <!-- Form View for Exam Question Display -->
+        <record id="view_exam_question_display_form" model="ir.ui.view">
+            <field name="name">exam.question.display.form</field>
+            <field name="model">exam.question.display</field>
+            <field name="arch" type="xml">
+                <form string="Exam Questions">
+                    <header>
+                        <h2>FINA3001 DERIVATIVES</h2>
+                        <h3>Sample Exam Paper</h3>
+                        <p>Dr. Huiyan Qiu</p>
+                        <p>Note: This exam paper serves the purpose of a sample paper for both midterm and final exams.</p>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="exam_id" onchange="_onchange_exam_id" options="{'no_create': True}"/>
+                        </group>
+
+                        <!-- Multiple Choice Questions Section -->
+                        <group string="Multiple Choice Questions" colspan="2">
+                            <field name="mcq_lines" widget="one2many_list">
+                                <tree editable="bottom">
+                                    <field name="name" string="Question Text"/>
+                                    <field name="option_a" string="Option A"/>
+                                    <field name="option_b" string="Option B"/>
+                                    <field name="option_c" string="Option C"/>
+                                    <field name="option_d" string="Option D"/>
+                                    <field name="correct_answer" string="Correct Answer" help="Specify the correct option (A, B, C, or D)."/>
+                                </tree>
+                            </field>
+                        </group>
+
+                        <!-- True/False Questions Section -->
+                        <group string="True/False Questions" colspan="2">
+                            <field name="tf_lines" widget="one2many_list">
+                                <tree editable="bottom">
+                                    <field name="name" string="Question Text"/>
+                                    <field name="true_false_answer" string="True/False Answer"/>
+                                </tree>
+                            </field>
+                        </group>
+
+                        <!-- Essay Questions Section -->
+                        <group string="Essay Questions" colspan="2">
+                            <field name="essay_lines" widget="one2many_list">
+                                <tree editable="bottom">
+                                    <field name="name" string="Question Text"/>
+                                    <field name="essay_answer" string="Essay Answer"/>
+                                </tree>
+                            </field>
+                        </group>
+
+                        <!-- Matching Questions Section -->
+                        <group string="Matching Questions" colspan="2">
+                            <field name="matching_lines" widget="one2many_list">
+                                <tree editable="bottom">
+                                    <field name="name" string="Question Text"/>
+                                    <field name="match_question" string="Match Question"/>
+                                    <field name="match_answer" string="Match Answer"/>
+                                </tree>
+                            </field>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

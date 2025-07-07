@@ -12,6 +12,7 @@
                     <field name="exam_type"/>
                     <field name="department_id"/>
                     <field name="scheduled_datetime"/>
+                    <field name="active"/>
                 </tree>
             </field>
         </record>
@@ -26,16 +27,16 @@
 
                         <!-- Exam Info -->
                         <group string="Exam Details">
-                            <field name="name"/>
-                            <field name="exam_type"/>
+                            <field name="name" required="1"/>
+                            <field name="exam_type" required="1"/>
                             <field name="job_grade"/>
                             <field name="job_role"/>
-                            <field name="department_id"/>
+                            <field name="department_id" required="1"/>
                         </group>
 
                         <!-- Schedule and Admin -->
                         <group string="Schedule &amp; Responsibility">
-                            <field name="scheduled_datetime"/>
+                            <field name="scheduled_datetime" required="1"/>
                             <field name="duration_minutes"/>
                             <field name="responsible_hr"/>
                             <field name="is_mandatory"/>
@@ -45,14 +46,14 @@
 
                         <!-- Exam Setup -->
                         <group string="Exam Configuration">
-                            <field name="number_of_questions"/>
-                            <field name="passing_score"/>
+                            <field name="number_of_questions" required="1"/>
+                            <field name="passing_score" required="1"/>
                         </group>
 
                         <!-- Question Upload -->
                         <group string="Upload Questions">
                             <field name="question_file" filename="question_file_name"/>
-                            <field name="question_file_name"/>
+                            <field name="question_file_name" readonly="1"/>
                             <button name="import_questions" type="object" string="Import Questions" class="btn-primary"/>
                         </group>
 
@@ -62,7 +63,13 @@
                                 <tree editable="bottom">
                                     <field name="name"/>
                                     <field name="question_type"/>
-                                    <field name="options"/>
+                                    <field name="match_question" string="Match Question" groups="base.group_user"/>
+                                    <field name="match_answer" string="Match Answer" groups="base.group_user"/>
+                                    <field name="option_a" string="Option A" groups="base.group_user"/>
+                                    <field name="option_b" string="Option B" groups="base.group_user"/>
+                                    <field name="option_c" string="Option C" groups="base.group_user"/>
+                                    <field name="option_d" string="Option D" groups="base.group_user"/>
+                                    <field name="correct_answer" invisible="1"/> <!-- Store but not display -->
                                 </tree>
                             </field>
                         </group>
@@ -82,11 +89,6 @@
             <field name="name">Exams</field>
             <field name="res_model">exam.management</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_ids" eval="[
-                Command.clear(),
-                (0, 0, {'view_mode': 'tree', 'view_id': ref('view_exam_tree')}),
-                (0, 0, {'view_mode': 'form', 'view_id': ref('view_exam_form')})
-            ]"/>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">Create a new exam record</p>
             </field>

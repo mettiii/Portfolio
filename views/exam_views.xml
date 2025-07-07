@@ -21,7 +21,11 @@
                                 <tree editable="bottom">
                                     <field name="name"/>
                                     <field name="question_type"/>
-                                    <field name="options"/>
+                                    <field name="option_a" string="Option A" groups="base.group_user"/>
+                                    <field name="option_b" string="Option B" groups="base.group_user"/>
+                                    <field name="option_c" string="Option C" groups="base.group_user"/>
+                                    <field name="option_d" string="Option D" groups="base.group_user"/>
+                                    <field name="correct_answer" invisible="1"/> <!-- Store but not display -->
                                 </tree>
                             </field>
                         </page>
@@ -41,9 +45,9 @@
         </field>
     </record>
 
-    <record id="action_exam_management" model="ir.actions.act_window">
-        <field name="name">Exam Management</field>
-        <field name="res_model">exam.management</field>
-        <field name="view_mode">tree,form</field>
-    </record>
+<!--    <record id="action_exam_management" model="ir.actions.act_window">-->
+<!--        <field name="name">Exam Management</field>-->
+<!--        <field name="res_model">exam.management</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--    </record>-->
 </odoo>

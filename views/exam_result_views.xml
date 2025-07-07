@@ -28,7 +28,7 @@
                     </group>
                     <footer>
                         <button name="action_print_scorecard" string="Print Scorecard" type="object" class="oe_highlight"/>
-                    </footer>
+                     </footer>
                 </sheet>
             </form>
         </field>
