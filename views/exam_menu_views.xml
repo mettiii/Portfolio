@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <!-- Top-level menu -->
-    <menuitem id="menu_root" name="Test Exam Management" sequence="0"/>
+    <menuitem id="menu_root" name="Bunna Bank Exam Management" sequence="0"/>
 
     <!-- Submenu: Exams -->
     <menuitem id="exams_list" name="Exams" parent="menu_root" action="action_exam_list" sequence="1"/>

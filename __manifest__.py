@@ -1,5 +1,5 @@
 {
-    'name': 'Test Exam Management System',
+    'name': 'Bunna Bank Exam Management System',
     'author': 'Internship Projects',
     'sequence': -500,
     'license': 'LGPL-3',
