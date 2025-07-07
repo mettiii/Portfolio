@@ -22,6 +22,9 @@
     'views/exam_login_template.xml',
      'views/exam_taker_views.xml',
       # ✅ Add here, not in 'views' key
+
+        'views/question_display.xml',
+
 ],
 
 

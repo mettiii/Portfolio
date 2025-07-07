@@ -6,7 +6,7 @@ class Employee(models.Model):
     image = fields.Binary(string="Image", attachment=True)
     bank_branch = fields.Char(string="Bank Branch")
     employee_code = fields.Char(string="Employee ID")
-    job_grade = fields.Char(string="Job Grade")
+    job_grade = fields.Char(string="Job Grade")  # Add the job_grade field
 
     user_id = fields.Many2one(
         'res.users',
