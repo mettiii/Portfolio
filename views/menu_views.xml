@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="menu_exam_root" model="ir.ui.menu">
+            <field name="name">Exam Management</field>
+            <field name="sequence" eval="5"/>
+        </record>
+    </data>
+</odoo>
