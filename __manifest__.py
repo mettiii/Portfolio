@@ -1,5 +1,5 @@
 {
-    'name': 'Bunna Bank Exam Management System',
+    'name': 'Buna Bank Exam Management System',
     'author': 'Internship Projects',
     'sequence': -500,
     'license': 'LGPL-3',
@@ -9,17 +9,26 @@
         'mail',
         'hr'
     ],
-    'data': [
-        'security/ir.model.access.csv',
-        'views/exam_question_views.xml',
-        'views/exam_views.xml',
-        'views/employee.xml',
-        'views/exam_list.xml',
-        'views/exam_result_views.xml',
+'data': [
+    'security/ir.model.access.csv',
+'views/exam_dashboard_template.xml',
+    'views/exam_views.xml',
+    'views/employee.xml',
+    'views/exam_question_views.xml',
+    'views/exam_result_views.xml',
+    'views/exam_menu_views.xml',
+    'views/exam_list.xml',
+    'report/scorecard_report.xml',
+    'views/exam_login_template.xml',
+     'views/exam_taker_views.xml',
+      # ✅ Add here, not in 'views' key
+
         'views/question_display.xml',
-        'views/exam_menu_views.xml',
-        'report/scorecard_report.xml',
-    ],
+
+],
+
+
+
     'installable': True,
     'application': True,
 }

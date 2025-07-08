@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="exam_dashboard_template" name="Exam Dashboard" page="true">
+            <t t-call="website.layout">
+                <div class="container my-5">
+                    <h2>Hello <t t-esc="user.name"/> 👋</h2>
+                    <p>Welcome to the Exam Management Dashboard</p>
+
+                    <div class="row mt-4">
+
+                        <!-- HR Admin Buttons -->
+                        <t t-if="is_hr">
+                            <div class="col-12 mb-3">
+                                <h4>HR Admin Actions</h4>
+                                <a class="btn btn-primary m-1">Manage Exams</a>
+                                <a class="btn btn-primary m-1">Schedule Exams</a>
+                                <a class="btn btn-primary m-1">Create Users</a>
+                                <a class="btn btn-primary m-1">View Reports</a>
+                            </div>
+                        </t>
+
+                        <!-- Examiner Buttons -->
+                        <t t-if="is_examiner">
+                            <div class="col-12 mb-3">
+                                <h4>Examiner Actions</h4>
+                                <a class="btn btn-warning m-1">Review Questions</a>
+                                <a class="btn btn-warning m-1">Evaluate Results</a>
+                            </div>
+                        </t>
+
+                        <!-- Candidate Buttons -->
+                        <t t-if="is_candidate">
+                            <div class="col-12 mb-3">
+                                <h4>Candidate Actions</h4>
+                                <a class="btn btn-success m-1" href="/my/exam">Take Exam</a>
+                                <a class="btn btn-success m-1">View Score</a>
+                            </div>
+                        </t>
+
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>
