@@ -68,7 +68,7 @@ class ExamManagement(models.Model):
                 question_text = row[0].strip()
                 question_type = row[1].strip()
 
-                option_a = option_b = option_c = option_d = None
+                correct_answer=option_a = option_b = option_c = option_d = None
                 match_question = match_answer = None
 
                 if question_type == 'matching':
@@ -92,8 +92,7 @@ class ExamManagement(models.Model):
                         option_b = row[3].strip()
                         option_c = row[4].strip()
                         option_d = row[5].strip()
-
-                    correct_answer = row[6].strip() if len(row) > 6 else None
+                        correct_answer = row[6].strip() if len(row) > 6 else None
 
                     question = self.env['exam.question'].create({
                         'name': question_text,

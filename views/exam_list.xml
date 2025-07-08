@@ -69,7 +69,7 @@
                                     <field name="option_b" string="Option B" groups="base.group_user"/>
                                     <field name="option_c" string="Option C" groups="base.group_user"/>
                                     <field name="option_d" string="Option D" groups="base.group_user"/>
-                                    <field name="correct_answer" invisible="1"/> <!-- Store but not display -->
+                                    <field name="correct_answer" />
                                 </tree>
                             </field>
                         </group>

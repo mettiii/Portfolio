@@ -13,6 +13,11 @@ class ExamQuestion(models.Model):
         ('matching', 'Matching'),
         ('essay', 'Essay'),
     ], string='Question Type', required=True)
+    true_false_answer = fields.Selection([
+        ('True', 'True'),
+        ('False', 'False')
+    ], string='True/False Answer')
+    essay_answer = fields.Text(string='Expected Essay Answer')
 
     # Fields for multiple choice options
     option_a = fields.Char(string='Option A')

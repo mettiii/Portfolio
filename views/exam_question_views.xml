@@ -9,7 +9,12 @@
                 <tree string="Question Bank">
                     <field name="name" string="Question Text"/>
                     <field name="question_type" string="Question Type"/>
+                    <field name="option_a" string="Option A"/>
+                    <field name="option_b" string="Option B"/>
+                    <field name="option_c" string="Option C"/>
+                    <field name="option_d" string="Option D"/>
                     <field name="correct_answer" string="Correct Answer"/>
+
                 </tree>
             </field>
         </record>
@@ -25,7 +30,8 @@
                             <field name="name" string="Question Text" required="1"/>
                             <field name="question_type" string="Question Type" required="1"/>
                             <field name="correct_answer" required="1" string="Correct Answer"/>
-                            <field name="exam_ids" widget="many2many_tags" options="{'no_create': True}" string="Used In Exams"/>
+                            <field name="exam_ids" widget="many2many_tags" options="{'no_create': True}"
+                                   string="Used In Exams"/>
                         </group>
 
                         <group string="Multiple Choice Options">

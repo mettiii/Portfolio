@@ -3,4 +3,3 @@ access_exam_management,access.exam.management,model_exam_management,base.group_u
 access_exam_result,access.exam.result,model_exam_result,base.group_user,1,1,1,1
 access_exam_question_user,access.exam.question.user,model_exam_question,base.group_user,1,1,1,1
 access_exam_question_display,access_exam_question_display,model_exam_question_display,,1,1,1,1
-access_exam_question_line,access_exam_question_line,model_exam_question_line,,1,1,1,1
