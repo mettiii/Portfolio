@@ -11,7 +11,7 @@
                     <field name="name"/>
                     <field name="employee_code"/>
                     <field name="company_id"/>
-                    <field name="job_grade"/>
+                    <field name="job_grad"/>
                     <field name="department_id"/>
                     <field name="bank_branch"/>
                     <field name="exam_result_ids"/>
@@ -28,10 +28,14 @@
                 <form string="Exam Taker">
                     <sheet>
                         <group>
+                            <field name="image"/>
                             <field name="name"/>
                             <field name="company_id"/>
                             <field name="department_id"/>
-                            <field name="gender"/>
+                            <field name="job_grad"/>
+                            <field name="job_role"/>
+                            <field name="employee_code"/>
+                            <field name="password"/>
                         </group>
                         <div class="oe_chatter">
                             <field name="message_follower_ids"/>
@@ -66,7 +70,7 @@
                 <tree string="Exam Takers" create="0" delete="0" edit="0">
                     <field name="name"/>
                     <field name="company_id"/>
-                    <field name="job_grade"/>
+                    <field name="job_grad"/>
                     <field name="department_id"/>
                     <field name="bank_branch"/>
                     <field name="exam_result_ids"/>
@@ -85,7 +89,7 @@
                         <group>
                             <field name="name" readonly="1"/>
                             <field name="department_id" readonly="1"/>
-                            <field name="gender" readonly="1"/>
+<!--                            <field name="gender" readonly="1"/>-->
                         </group>
                         <div class="oe_chatter">
                             <field name="message_follower_ids"/>
@@ -106,8 +110,8 @@
                 (0, 0, {'view_mode': 'tree', 'view_id': ref('view_exam_takers_tree_readonly')}),
                 (0, 0, {'view_mode': 'form', 'view_id': ref('view_exam_takers_form_readonly')})
             ]"/>
-             <field name="help" type="html">
-                <p class="o_view_nocontent_smiling_face">Create a </p>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create a</p>
             </field>
         </record>
 

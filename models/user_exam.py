@@ -16,6 +16,30 @@ class ExamQuestionDisplay(models.Model):
     matching_lines = fields.One2many(
         'exam.question', compute='_compute_matching_lines', string='Matching Questions', store=False)
 
+    def submit_exam(self):
+        employee = self._get_employee()
+        answer_model = self.env['exam.answer']
+
+        # Example: Simulate creating answers
+        for question in self.exam_id.question_ids:
+            posted_val = self.env.context.get(f'answer_{question.id}')
+            answer_model.create({
+                'question_id': question.id,
+                'employee_id': employee.id,
+                'display_id': self.id,
+                'selected_option': posted_val,  # Or essay_response/matching_response
+            })
+
+        return {
+            'type': 'ir.actions.client',
+            'tag': 'display_notification',
+            'params': {
+                'title': 'Exam Submitted',
+                'message': 'Your answers were submitted successfully!',
+                'type': 'success',
+            }
+        }
+
     @api.depends('exam_id')
     def _compute_mcq_lines(self):
         for rec in self:
@@ -35,3 +59,4 @@ class ExamQuestionDisplay(models.Model):
     def _compute_matching_lines(self):
         for rec in self:
             rec.matching_lines = rec.exam_id and rec.exam_id.question_ids.filtered(lambda q: q.question_type == 'matching') or False
+

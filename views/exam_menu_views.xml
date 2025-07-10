@@ -20,8 +20,11 @@
     <!-- <menuitem id="menu_exam_setup" name="Manage Exams" parent="menu_root" action="action_exam_management" sequence="2"/> -->
     <menuitem id="user_exam_questions" name="User View" parent="menu_root" action="action_exam_question_display" sequence="4"/>
 
+    <!-- Submenu: Take Exam (New Radio Button Interface) -->
+<!--    <menuitem id="take_exam" name="Take Exam" parent="menu_root" action="action_exam_taking" sequence="5"/>-->
+
     <!-- Submenu: Question Bank -->
-    <menuitem id="menu_exam_questions" name="Question Bank" parent="menu_root" action="action_exam_question_bank" sequence="5"/>
+    <menuitem id="menu_exam_questions" name="Question Bank" parent="menu_root" action="action_exam_question_bank" sequence="6"/>
 
     <!-- Submenu: User View -->
 

@@ -6,6 +6,22 @@ class ExamQuestion(models.Model):
     _description = 'Exam Questions'
 
     display_id = fields.Many2one('exam.question.display', string='Question Display')
+    exam_type = fields.Selection([
+        ('recruitment', 'Recruitment'),
+        ('promotion', 'Promotion'),
+        ('psychometric', 'Psychometric Assessments'),
+    ], string="Exam Type", required=True, tracking=True)
+    job_grade = fields.Selection([
+        ('junior', 'Junior'),
+        ('mid', 'Mid-Level'),
+        ('senior', 'Senior'),
+        ('executive', 'Executive')
+    ], string="Job Grade", tracking=True)
+    job_role = fields.Selection([
+        ('acc', 'Accountant'),
+        ('it', 'IT'),
+        ('secretary', 'Secretary')
+    ], string="Job Role", tracking=True)
     name = fields.Text(string='Question Text', required=True)
     question_type = fields.Selection([
         ('true_false', 'True/False'),

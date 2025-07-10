@@ -9,11 +9,14 @@
                 <tree string="Question Bank">
                     <field name="name" string="Question Text"/>
                     <field name="question_type" string="Question Type"/>
-                    <field name="option_a" string="Option A"/>
-                    <field name="option_b" string="Option B"/>
-                    <field name="option_c" string="Option C"/>
-                    <field name="option_d" string="Option D"/>
+                    <field name="option_a" string="Option A" optional="hide"/>
+                    <field name="option_b" string="Option B" optional="hide"/>
+                    <field name="option_c" string="Option C" optional="hide"/>
+                    <field name="option_d" string="Option D" optional="hide"/>
                     <field name="correct_answer" string="Correct Answer"/>
+                    <field name="exam_type"/>
+                    <field name="job_grade" optional="hide"/>
+                    <field name="job_role" optional="hide"/>
 
                 </tree>
             </field>
@@ -27,18 +30,22 @@
                 <form string="Question">
                     <sheet>
                         <group>
+                            <field name="exam_type" required="1"/>
+                            <field name="job_grade"/>
+                            <field name="job_role"/>
                             <field name="name" string="Question Text" required="1"/>
                             <field name="question_type" string="Question Type" required="1"/>
-                            <field name="correct_answer" required="1" string="Correct Answer"/>
+                            <field name="correct_answer" string="Correct Answer" invisible="question_type=='essay'"/>
                             <field name="exam_ids" widget="many2many_tags" options="{'no_create': True}"
                                    string="Used In Exams"/>
                         </group>
 
-                        <group string="Multiple Choice Options">
-                            <field name="option_a" string="Option A"/>
-                            <field name="option_b" string="Option B"/>
-                            <field name="option_c" string="Option C"/>
-                            <field name="option_d" string="Option D"/>
+                        <group string="Multiple Choice Options" invisible="question_type!='multiple_choice'">
+                            <field name="option_a" string="Option A" invisible="question_type!='multiple_choice'"/>
+                            <field name="option_b" string="Option B" invisible="question_type!='multiple_choice'"/>
+                            <field name="option_c" string="Option C" invisible="question_type!='multiple_choice'"/>
+                            <field name="option_d" string="Option D" invisible="question_type!='multiple_choice'"/>
+
                         </group>
                     </sheet>
                 </form>
