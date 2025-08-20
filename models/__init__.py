@@ -1,6 +1,0 @@
-from . import exam
-from . import employee
-from . import exam_result
-from . import exam_question
-from .import user_exam
-from . import exam_file
