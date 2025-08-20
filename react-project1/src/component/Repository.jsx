@@ -1,5 +1,5 @@
-// src/component/GitHubRepos.js
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 function GitHubRepos({ darkMode }) {
   const [repos, setRepos] = useState([]);
@@ -53,11 +53,13 @@ function GitHubRepos({ darkMode }) {
 
   return (
     <div
-      className={`container m-auto p-2 w-full min-h-screen flex flex-col items-center justify-center ${
+      className={`container m-auto p-2 w-full min-h-screen flex flex-col items-center justify-center transition-colors duration-300  ${
         darkMode ? "bg-gray-700 text-white" : "bg-pink-100 text-black"
       }`}
     >
-      <h1 className="text-2xl font-bold mb-4">Recent GitHub Repositories</h1>
+      <h1 className="mt-48 text-2xl font-bold mb-4">
+        Recent GitHub Repositories
+      </h1>
       <ul className="list-disc list-inside">
         {repos.slice(0, 10).map((repo) => (
           <li
@@ -81,5 +83,8 @@ function GitHubRepos({ darkMode }) {
     </div>
   );
 }
+GitHubRepos.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
+};
 
 export default GitHubRepos;

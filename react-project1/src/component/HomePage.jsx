@@ -1,14 +1,14 @@
-import React from "react";
+import PropTypes from "prop-types";
 import myLogo from "../assets/A.png";
 
 function HomePage({ darkMode }) {
   return (
     <div
-      className={`flex flex-col items-center justify-center min-h-screen ${
+      className={`flex flex-col items-center justify-center min-h-screen transition-colors duration-300 ${
         darkMode ? "bg-gray-700 text-white" : "bg-pink-100 text-black"
       }`}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+      <div className="mt-44 grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
         <div className="flex flex-col items-start justify-start">
           <div className="flex items-start mb-4">
             <img
@@ -22,7 +22,10 @@ function HomePage({ darkMode }) {
           </div>
         </div>
         <div className="flex flex-col justify-center p-10">
-          <p className="mb-4 text-3xl font-semibold">I'm a Web Developer</p>
+          <p className="mb-4 text-3xl font-semibold">
+            {" "}
+            I&apos;m a Web Developer
+          </p>
           <p className="mb-4 text-2xl">
             I can help you build a product, feature, or website. Look through
             some of my work and experience! If you like what you see and have a
@@ -38,5 +41,7 @@ function HomePage({ darkMode }) {
     </div>
   );
 }
-
+HomePage.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
+};
 export default HomePage;

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import myLogo from "../assets/A.png";
+import PropTypes from "prop-types";
 
 function Header({ toggleDarkMode, darkMode }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,7 +11,11 @@ function Header({ toggleDarkMode, darkMode }) {
   };
 
   return (
-    <nav className={`p-4 ${darkMode ? "bg-gray-900" : "bg-pink-300"}`}>
+    <nav
+      className={`fixed top-0 right-0 left-0 p-4 transition-colors duration-300 z-50 ${
+        darkMode ? "bg-gray-900" : "bg-pink-300"
+      }`}
+    >
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <img
@@ -129,5 +134,10 @@ function Header({ toggleDarkMode, darkMode }) {
     </nav>
   );
 }
+
+Header.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
+  toggleDarkMode: PropTypes.func.isRequired,
+};
 
 export default Header;

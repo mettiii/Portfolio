@@ -1,8 +1,8 @@
-import React from "react";
 import Contact from "./ContactMeForm";
 import githubIcon from "../assets/Icon -GitHub.png";
 import twitterIcon from "../assets/Icon - Twitter1.png";
 import linkedinIcon from "../assets/Icon - Linkedin1.png";
+import PropTypes from "prop-types";
 
 function ContactPage({ darkMode }) {
   return (
@@ -24,7 +24,7 @@ function ContactPage({ darkMode }) {
           <img src={githubIcon} alt="GitHub icon" className="w-6 h-6" />
         </a>
         <a
-          href="https://et.linkedin.com/in/meti-abera-80909b318"
+          href="https://www.linkedin.com/in/meti-abera-80909b318"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -34,5 +34,9 @@ function ContactPage({ darkMode }) {
     </div>
   );
 }
+
+ContactPage.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
+};
 
 export default ContactPage;
