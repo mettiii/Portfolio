@@ -1,8 +1,8 @@
-import React from "react";
 import Skill from "./Skills";
 import TestimonyCard from "./TestimonyCard";
 import { FaLaptopCode, FaUsers, FaLightbulb, FaRegSmile } from "react-icons/fa"; //fa-font Awesome
 import myImage from "../assets/me1.jpg";
+import PropTypes from "prop-types";
 
 function About({ darkMode }) {
   return (
@@ -11,7 +11,7 @@ function About({ darkMode }) {
         darkMode ? "bg-gray-700 text-white" : "bg-pink-100 text-black"
       }`}
     >
-      <h1 className="text-3xl font-bold mb-4 text-center">About Me</h1>
+      <h1 className="mt-36 text-3xl font-bold mb-4 text-center">About Me</h1>
       <div className="p-4 flex justify-center">
         <img
           src={myImage}
@@ -27,7 +27,7 @@ function About({ darkMode }) {
         >
           <FaRegSmile className="absolute top-4 left-4 text-5xl text-white" />
           <p className={`p-10 `}>
-            Hi, I'm Meti Abera, a dedicated third-year Information Science
+            Hi, I&apos;m Meti Abera, a dedicated third-year Information Science
             student at Addis Ababa University. My academic journey has been both
             enriching and transformative, and I am passionate about leveraging
             technology to solve real-world problems.
@@ -94,4 +94,7 @@ function About({ darkMode }) {
   );
 }
 
+About.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
+};
 export default About;

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-
+import { useState } from "react";
+import PropTypes from "prop-types";
 function Contact({ darkMode }) {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -48,7 +48,7 @@ function Contact({ darkMode }) {
   };
 
   return (
-    <div className={`flex flex-col justify-center items-center`}>
+    <div className={`mt-16 sm:mt-40 flex flex-col justify-center items-center`}>
       <form
         onSubmit={handleSubmit}
         className={`flex flex-col items-center w-full md:w-1/2 p-4 rounded`}
@@ -120,5 +120,9 @@ function Contact({ darkMode }) {
     </div>
   );
 }
+
+Contact.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
+};
 
 export default Contact;

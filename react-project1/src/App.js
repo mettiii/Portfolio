@@ -1,5 +1,4 @@
-// App.jsx
-import React, { useState } from "react";
+import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./component/HomePage.jsx";
 import About from "./component/AboutSection.jsx";
@@ -7,13 +6,16 @@ import Footer from "./component/Footer.jsx";
 import ContactPage from "./component/ContactPage.jsx";
 import Header from "./component/Header.jsx";
 import ProjectCard from "./component/ProjectCard.jsx";
-import GitHubRepos from "./component/Repository.jsx"; // Ensure the import path is correct
+import GitHubRepos from "./component/Repository.jsx";
+import PropTypes from "prop-types";
 
-function AppContent({ darkMode }) {
+const AppContent = ({ darkMode }) => {
   return (
     <div
-      className={`max-w-screen h-screen ${
-        darkMode ? "bg-gray-700 text-white" : "bg-pink-100 text-black"
+      className={`${
+        darkMode
+          ? "bg-gray-700 text-white h-screen"
+          : "bg-pink-100 text-black h-screen"
       }`}
     >
       <Routes>
@@ -28,13 +30,16 @@ function AppContent({ darkMode }) {
       </Routes>
     </div>
   );
-}
+};
+AppContent.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
+};
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+    setDarkMode((prevMode) => !prevMode);
   };
 
   return (

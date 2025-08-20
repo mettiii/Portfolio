@@ -1,9 +1,9 @@
-import React from "react";
 import CircularProgressBar from "./CircularProgressBar";
+import PropTypes from "prop-types";
 function Skill({ darkMode }) {
   return (
     <div
-      className={`container mx-auto p-6 text-lg my-8
+      className={`container mx-auto p-6 text-lg my-8 transition-colors duration-300 
             ${darkMode ? "bg-gray-800 text-white" : "bg-pink-200 "}`}
     >
       <h3 className="text-3xl  mb-2 font-bold">Skills</h3>
@@ -39,5 +39,8 @@ function Skill({ darkMode }) {
     </div>
   );
 }
+Skill.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
+};
 
 export default Skill;

@@ -1,9 +1,9 @@
-import React from "react";
+import PropTypes from "prop-types";
 
 function CircularProgressBar({ percentage, darkMode }) {
   const radius = 30;
   const strokeWidth = 5;
-  const normalizedRadius = radius - strokeWidth * 0.5; // Adjusted radius
+  const normalizedRadius = radius - strokeWidth * 0.5;
   const circumference = normalizedRadius * 2 * Math.PI;
   const strokeDashoffsetAchieved =
     circumference - (percentage / 100) * circumference;
@@ -49,5 +49,9 @@ function CircularProgressBar({ percentage, darkMode }) {
     </div>
   );
 }
+CircularProgressBar.propTypes = {
+  percentage: PropTypes.number.isRequired,
+  darkMode: PropTypes.bool.isRequired,
+};
 
 export default CircularProgressBar;

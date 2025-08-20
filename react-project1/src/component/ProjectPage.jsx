@@ -1,6 +1,5 @@
-import React from "react";
 import { FaHeart } from "react-icons/fa";
-
+import PropTypes from "prop-types";
 function ProjectPage(props) {
   const {
     darkMode,
@@ -14,7 +13,7 @@ function ProjectPage(props) {
 
   return (
     <div
-      className={`border p-4 rounded mx-auto ${
+      className={`h-max border p-4 rounded mx-auto transition-colors duration-300 ${
         darkMode ? "bg-gray-700 text-white" : "bg-pink-100 text-black"
       }`}
     >
@@ -35,5 +34,14 @@ function ProjectPage(props) {
     </div>
   );
 }
+ProjectPage.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+  handleLike: PropTypes.func.isRequired,
+  currentIndex: PropTypes.number.isRequired,
+  likes: PropTypes.bool.isRequired,
+};
 
 export default ProjectPage;

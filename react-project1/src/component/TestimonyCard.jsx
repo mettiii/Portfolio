@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import TestimonyPage from "./TestimonyPage";
 import testimonies from "../testimonies";
+import PropTypes from "prop-types";
 
 function TestimonyCard({ darkMode }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -26,7 +27,7 @@ function TestimonyCard({ darkMode }) {
 
   return (
     <div
-      className={`container mx-auto p-6 ${
+      className={`container mx-auto p-6 transition-colors duration-300  ${
         darkMode ? "bg-gray-800 text-white" : "bg-pink-200 text-black"
       }`}
     >
@@ -73,5 +74,7 @@ function TestimonyCard({ darkMode }) {
     </div>
   );
 }
-
+TestimonyCard.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
+};
 export default TestimonyCard;

@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ProjectPage from "./ProjectPage";
 import projects from "../projects";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import PropTypes from "prop-types";
 
 function ProjectCard({ darkMode }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -37,11 +38,11 @@ function ProjectCard({ darkMode }) {
 
   return (
     <div
-      className={`container mx-auto p-6 ${
+      className={`h-auto container mx-auto p-6 transition-colors duration-300 ${
         darkMode ? "bg-gray-800 text-white" : "bg-pink-200 text-black"
       }`}
     >
-      <h2 className="text-2xl font-bold mb-6 pt-20">My Projects</h2>
+      <h2 className="mt-16 text-2xl font-bold mb-6 pt-20">My Projects</h2>
       <div
         ref={ref}
         className="relative rounded-lg shadow-md p-10"
@@ -86,5 +87,8 @@ function ProjectCard({ darkMode }) {
     </div>
   );
 }
+ProjectCard.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
+};
 
 export default ProjectCard;

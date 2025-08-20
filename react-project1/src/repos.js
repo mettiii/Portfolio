@@ -36,4 +36,4 @@ const repo = [
     link: "https://github.com/mettiii/Python-DSA",
   },
 ];
-export default repos;
+export default repo;
