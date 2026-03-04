@@ -48,7 +48,7 @@ function Contact({ darkMode }) {
   };
 
   return (
-    <div className={`mt-16 sm:mt-40 flex flex-col justify-center items-center`}>
+    <div className={`mt-16 h-screensm:mt-40 flex flex-col justify-center items-center`}>
       <form
         onSubmit={handleSubmit}
         className={`flex flex-col items-center w-full md:w-1/2 p-4 rounded`}

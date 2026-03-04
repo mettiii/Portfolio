@@ -1,33 +1,27 @@
 const projects = [
   {
     key: 1,
-    title: "Capstone Project",
+    title: "Industrial Project Prototype",
     description: "Figma based portifolio with html and css",
-    link: "https://github.com/mettiii/capstone-project",
+    link: "https://github.com/mettiii/Industrial-Project-Prototype",
   },
   {
     key: 2,
-    title: "Database",
+    title: "Exam Management System",
     description: "Second year Human Resource Manangement System Database",
-    link: "https://github.com/mettiii/Database",
+    link: "https://github.com/mettiii/Exam_Management",
   },
   {
     key: 3,
-    title: "React Project",
+    title: "Movie Catalogue",
     description: "Projects for done when learning react",
-    link: "https://github.com/mettiii/React",
+    link: "https://github.com/ISHUBTEAM/Frontend_G3_Meti_Abera_FinalProject",
   },
   {
     key: 4,
     title: "Job Application App",
     description: "Job application app that is done by Java",
     link: "https://github.com/mettiii/Job-Application-App",
-  },
-  {
-    key: 6,
-    title: "Calculator",
-    description: "Calculator done with javascript, Bootstrap and HTML",
-    link: "https://github.com/mettiii/Javascript",
   },
 ];
 export default projects;
