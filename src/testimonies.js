@@ -6,7 +6,7 @@ const testimonies = [
   {
     key: 1,
     img: p1,
-    name: "Engifu Kifle",
+    name: "Engidu Kifle",
     quote:
       "Thanks to Meti, our exam management system is now more efficient and user-friendly. Her ability to get used to a new framework in a short time shows her adaptability. I highly recommend her services!",
   },

@@ -32,9 +32,9 @@ function About({ darkMode }) {
             to solve real-world problems.
           </p>
           <p className={`px-10 `}>
-            Over the past four semesters, I’ve had the privilege of learning
-            from experienced instructors who have inspired me to think
-            critically and innovate.
+            Over the past four years, I’ve had the privilege of learning from
+            experienced instructors who have inspired me to think critically and
+            innovate.
           </p>
         </div>
 
