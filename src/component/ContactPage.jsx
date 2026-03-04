@@ -29,13 +29,6 @@ function ContactPage({ darkMode }) {
         >
           <img src={linkedinIcon} alt="LinkedIn icon" className="w-6 h-6" />
         </a>
-        <a
-          href="https://www.linkedin.com/in/meti-abera-80909b318"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src={linkedinIcon} alt="LinkedIn icon" className="w-6 h-6" />
-        </a>
       </div>
     </div>
   );
