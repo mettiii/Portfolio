@@ -1,6 +1,12 @@
 import Skill from "./Skills";
 import TestimonyCard from "./TestimonyCard";
-import { FaLaptopCode, FaUsers, FaLightbulb, FaRegSmile } from "react-icons/fa"; //fa-font Awesome
+import {
+  FaFileAlt,
+  FaLaptopCode,
+  FaUsers,
+  FaLightbulb,
+  FaRegSmile,
+} from "react-icons/fa"; //fa-font Awesome
 import myImage from "../assets/me1.jpg";
 import PropTypes from "prop-types";
 function About({ darkMode }) {
@@ -18,6 +24,21 @@ function About({ darkMode }) {
           className="w-40 h-40 md:w-96 md:h-96 rounded-full object-cover "
         />
       </div>
+      <div>
+        <button
+          onClick={() =>
+            window.open("https://flowcv.com/resume/d1hsodn7jpcs", "_blank")
+          }
+          className={`m-6 px-4 py-2 rounded-xl align-center shadow-lg border-l-cyan-800 ${
+            darkMode ? "bg-gray-800 text-white" : "bg-sky-200 text-black"
+          }`}
+        >
+          <span className="flex items-center space-x-4 justify-evenly">
+            {" "}
+            <FaFileAlt /> View My Resume
+          </span>
+        </button>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div
           className={`rounded-lg shadow-md p-4 transition-transform transform hover:scale-105 relative ${
@@ -32,9 +53,9 @@ function About({ darkMode }) {
             to solve real-world problems.
           </p>
           <p className={`px-10 `}>
-            Over the past four years, I’ve had the privilege of learning from
-            experienced instructors who have inspired me to think critically and
-            innovate.
+            Over the past four semesters, I’ve had the privilege of learning
+            from experienced instructors who have inspired me to think
+            critically and innovate.
           </p>
         </div>
 
@@ -91,18 +112,7 @@ function About({ darkMode }) {
           </p>
         </div>
       </div>
-      <div>
-        <button
-          onClick={() =>
-            window.open("https://flowcv.com/resume/d1hsodn7jpcs", "_blank")
-          }
-          className={`mt-6 px-4 py-2 rounded-xl align-center shadow-lg border-l-cyan-800 ${
-            darkMode ? "bg-gray-800 text-white" : "bg-sky-200 text-black"
-          }`}
-        >
-          View My Resume
-        </button>
-      </div>
+
       <div className="mt-6">
         <Skill darkMode={darkMode} />
         <TestimonyCard darkMode={darkMode} />
