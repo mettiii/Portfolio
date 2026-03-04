@@ -14,8 +14,8 @@ const AppContent = ({ darkMode }) => {
     <div
       className={`${
         darkMode
-          ? "bg-gray-700 text-white h-screen"
-          : "bg-sky-100 text-black h-screen"
+          ? "bg-gray-700 text-white min-h-screen"
+          : "bg-sky-100 text-black min-h-screen"
       }`}
     >
       <Routes>
@@ -30,9 +30,6 @@ const AppContent = ({ darkMode }) => {
       </Routes>
     </div>
   );
-};
-AppContent.propTypes = {
-  darkMode: PropTypes.bool.isRequired,
 };
 
 function App() {
@@ -50,5 +47,9 @@ function App() {
     </Router>
   );
 }
+
+AppContent.propTypes = {
+  darkMode: PropTypes.bool,
+};
 
 export default App;
