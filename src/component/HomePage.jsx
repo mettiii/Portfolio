@@ -26,18 +26,16 @@ function HomePage({ darkMode }) {
             I specialize in building secure network architectures, penetration
             testing, and developing resilient web applications.
           </p>
-          <motion.button
+          <motion.a
+            href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => (window.location.href = "/contact")}
-            className={`px-6 py-3 font-bold rounded-lg shadow-md hover:opacity-90 ${
-              darkMode
-                ? "bg-gradient-to-r from-gray-900 via-slate-800 to-gray-950 text-white"
-                : "bg-gradient-to-r from-deep_twilight-500 to-bright_teal_blue-500 text-white"
+            className={`inline-block rounded-lg px-6 py-3 font-bold shadow-md transition-colors duration-300 hover:opacity-90 ${
+              darkMode ? "bg-white text-slate-900" : "bg-slate-950 text-white"
             }`}
           >
             Get in Touch
-          </motion.button>
+          </motion.a>
         </div>
       </div>
       <div className="h-32"></div>
