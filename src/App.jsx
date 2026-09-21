@@ -5,7 +5,6 @@ import About from "./component/AboutSection.jsx";
 import Footer from "./component/Footer.jsx";
 import ContactPage from "./component/ContactPage.jsx";
 import Header from "./component/Header.jsx";
-import ProjectCard from "./component/ProjectCard.jsx";
 import GitHubRepos from "./component/Repository.jsx";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
@@ -27,9 +26,6 @@ const AppContent = ({ darkMode }) => {
       </section>
       <section id="about" className="scroll-mt-24 my-12">
         <About darkMode={darkMode} />
-      </section>
-      <section id="projects" className="scroll-mt-24 my-12">
-        <ProjectCard darkMode={darkMode} />
       </section>
       <section id="repositories" className="scroll-mt-24 my-12">
         <GitHubRepos darkMode={darkMode} />

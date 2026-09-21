@@ -7,7 +7,6 @@ function Header({ toggleDarkMode, darkMode }) {
   const navItems = [
     { label: "Home", href: "#home" },
     { label: "About", href: "#about" },
-    { label: "Projects", href: "#projects" },
     { label: "Repositories", href: "#repositories" },
     { label: "Contact", href: "#contact" },
   ];
@@ -28,8 +27,7 @@ function Header({ toggleDarkMode, darkMode }) {
             href="#home"
             className="flex items-center"
             aria-label="Go to home section"
-          >
-          </a>
+          ></a>
 
           <div className="flex items-center gap-2">
             <button
