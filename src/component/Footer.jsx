@@ -10,11 +10,12 @@ const name = "Meti Abera";
 function Footer({ darkMode }) {
   return (
     <footer
-      className={`fixed bottom-0 w-full text-center shadow-xl transition-colors duration-300  ${
-        darkMode ? "bg-gray-900" : "bg-sky-300"
-      }`}
+      className={`fixed bottom-0 w-full text-center shadow-xl transition-colors duration-300 text-white ${
+          darkMode ? "bg-gray-900" : "bg-gradient-to-r from-deep_twilight-500 to-bright_teal_blue-500"
+        }`}
+     
     >
-      <p className={`mb-2 ${darkMode && "text-white"}`}>Created by {name}</p>
+      <p className={`mb-2 ${darkMode && "text-white"}`}>Passionate about building secure, resilient networks.</p>
       <hr />
 
       <ul className="flex space-x-4 justify-center pt-1">
@@ -48,6 +49,9 @@ function Footer({ darkMode }) {
       </ul>
       <p className={`mb-2 ${darkMode && "text-white"}`}>
         Copyright © {year} Portifolio
+      </p>
+      <p className={`mb-2 ${darkMode && "text-white"}`}>
+        {name}
       </p>
     </footer>
   );

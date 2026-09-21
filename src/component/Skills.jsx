@@ -3,8 +3,11 @@ import PropTypes from "prop-types";
 function Skill({ darkMode }) {
   return (
     <div
-      className={`container mx-auto p-6 text-lg my-8 transition-colors duration-300 
-            ${darkMode ? "bg-gray-800 text-white" : "bg-sky-200 "}`}
+      className={`container mx-auto my-8 p-6 text-lg shadow-lg transition-colors duration-300 ${
+        darkMode
+          ? "border border-gray-600 bg-gray-800 text-white"
+          : "border border-gray-300 bg-gradient-to-r from-deep_twilight-500 to-bright_teal_blue-500 text-white"
+      }`}
     >
       <h3 className="text-3xl  mb-2 font-bold">Skills</h3>
       <h3 className="text-xl font-bold mb-2">Programming Languages</h3>
@@ -40,12 +43,24 @@ function Skill({ darkMode }) {
         <li className="flex items-center justify-between mb-2">Odoo </li>
         <CircularProgressBar darkMode={darkMode} percentage={60} />
       </ul>
-      <h3 className="text-xl font-bold mb-2">Database Managemnt</h3>
-      <ul>
-        <li className="flex items-center justify-between mb-2">SQL</li>
-        <CircularProgressBar darkMode={darkMode} percentage={60} />
-        <li className="flex items-center justify-between mb-2">Postgres</li>
-        <CircularProgressBar darkMode={darkMode} percentage={60} />
+      <h3 className="text-xl font-bold mb-2">Networking & Cybersecurity</h3>
+      <ul className="mb-6">
+        <li className="flex items-center justify-between mb-2">
+          TCP/IP
+          <CircularProgressBar darkMode={darkMode} percentage={85} />
+        </li>
+        <li className="flex items-center justify-between mb-2">
+          Firewalls
+          <CircularProgressBar darkMode={darkMode} percentage={80} />
+        </li>
+        <li className="flex items-center justify-between mb-2">
+          Pen‑Testing
+          <CircularProgressBar darkMode={darkMode} percentage={75} />
+        </li>
+        <li className="flex items-center justify-between mb-2">
+          SIEM
+          <CircularProgressBar darkMode={darkMode} percentage={70} />
+        </li>
       </ul>
     </div>
   );

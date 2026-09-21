@@ -1,5 +1,5 @@
-// src/component/GitHubRepos.js
-import { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 function GitHubRepos({ darkMode }) {
   const [repos, setRepos] = useState([]);
@@ -31,7 +31,7 @@ function GitHubRepos({ darkMode }) {
     return (
       <div
         className={`h-full w-full ${
-          darkMode ? "bg-gray-800 text-white" : "bg-sky-200 text-black"
+          darkMode ? "bg-gray-800 text-white" : "bg-sky-200 text-white"
         }`}
       >
         Loading...
@@ -43,7 +43,7 @@ function GitHubRepos({ darkMode }) {
     return (
       <div
         className={`h-full w-full ${
-          darkMode ? "bg-gray-800 text-white" : "bg-sky-200 text-black"
+          darkMode ? "bg-gray-800 text-white" : "bg-sky-200 text-white"
         }`}
       >
         Error: {error}
@@ -53,8 +53,8 @@ function GitHubRepos({ darkMode }) {
 
   return (
     <div
-      className={`container m-auto p-2 w-full min-h-screen flex flex-col items-center justify-center transition-colors duration-300  ${
-        darkMode ? "bg-gray-700 text-white" : "bg-sky-100 text-black"
+      className={`container m-auto p-2 w-full min-h-screen flex flex-col items-center justify-center transition-colors duration-300 ${
+        darkMode ? "bg-gray-800 text-white" : "bg-gradient-to-r from-deep_twilight-500 to-bright_teal_blue-500 text-white"
       }`}
     >
       <h1 className="mt-48 text-2xl font-bold mb-4">
@@ -65,7 +65,7 @@ function GitHubRepos({ darkMode }) {
           <li
             key={repo.id}
             className={`hover:underline mb-2 ${
-              darkMode ? "text-white" : "text-black"
+              darkMode ? "text-white" : "text-white"
             }`}
           >
             <a

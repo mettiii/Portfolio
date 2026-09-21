@@ -9,10 +9,8 @@ function CircularProgressBar({ percentage, darkMode }) {
 
   return (
     <div
-      className={`flex flex-col items-center ${
-        darkMode ? "text-white" : "text-black"
-      }`}
-      style={{ padding: 0, margin: 0 }}
+      className="flex flex-col items-center transition-colors duration-300"
+      style={{ padding: 0, margin: 0, color: "white" }}
     >
       <svg height={radius * 2} width={radius * 2}>
         <circle
@@ -39,7 +37,7 @@ function CircularProgressBar({ percentage, darkMode }) {
           y={radius}
           textAnchor="middle"
           dominantBaseline="middle"
-          style={{ fill: darkMode && "white" }}
+          style={{ fill: "white" }}
           className="text-lg font-bold"
         >
           {percentage}%

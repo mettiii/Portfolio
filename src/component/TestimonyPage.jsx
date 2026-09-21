@@ -5,7 +5,7 @@ function TestimonyPage(props) {
   return (
     <div
       className={`border p-4 rounded shadow grid grid-cols-2 ${
-        darkMode ? "bg-gray-700 text-white" : "bg-sky-200 text-black"
+        darkMode ? "bg-gray-700 text-white" : "bg-sky-200 text-white"
       }`}
     >
       <div>

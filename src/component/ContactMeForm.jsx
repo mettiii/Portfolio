@@ -73,31 +73,43 @@ function Contact({ darkMode }) {
         <label className="self-start">Name:</label>
         <input
           type="text"
-          name="user_name" // <-- fixed
+          name="user_name"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-          className={`border rounded p-2 mb-4 w-full ${darkMode && "text-black"}`}
+          className={`mb-4 w-full rounded border p-2 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-400 ${
+            darkMode
+              ? "border-gray-600 bg-gray-800 text-white placeholder:text-gray-400"
+              : "border-sky-200 bg-sky-100 text-slate-900"
+          }`}
         />
 
         <label className="self-start">Email:</label>
         <input
           type="email"
-          name="user_email" // <-- fixed
+          name="user_email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className={`border rounded p-2 mb-4 w-full ${darkMode && "text-black"}`}
+          className={`mb-4 w-full rounded border p-2 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-400 ${
+            darkMode
+              ? "border-gray-600 bg-gray-800 text-white placeholder:text-gray-400"
+              : "border-sky-200 bg-sky-100 text-slate-900"
+          }`}
         />
 
         <label className="self-start">Message:</label>
         <textarea
-          name="message" // <-- fixed
+          name="message"
           value={message}
           onChange={handleMessageChange}
           maxLength={500}
           required
-          className={`border rounded p-2 mb-4 w-full h-24 ${darkMode && "text-black"}`}
+          className={`mb-4 h-24 w-full rounded border p-2 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-400 ${
+            darkMode
+              ? "border-gray-600 bg-gray-800 text-white placeholder:text-gray-400"
+              : "border-sky-200 bg-sky-100 text-slate-900"
+          }`}
         />
 
         {/* optional timestamp for EmailJS */}
@@ -108,7 +120,9 @@ function Contact({ darkMode }) {
         <button
           type="submit"
           className={`text-white p-2 rounded w-36 mt-4 ${
-            darkMode ? "text-white bg-slate-800" : "text-white bg-sky-500"
+            darkMode
+              ? "bg-gradient-to-r from-gray-800 to-gray-900 text-white"
+              : "bg-gradient-to-r from-deep_twilight-500 to-bright_teal_blue-500 text-white"
           }`}
         >
           Submit
@@ -118,7 +132,7 @@ function Contact({ darkMode }) {
       {showSuccess && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div
-            className={`p-6 rounded shadow-md ${darkMode ? "bg-gray-800 text-white" : "bg-sky-200"}`}
+            className={`p-6 rounded shadow-md ${darkMode ? "bg-gradient-to-r from-gray-800 to-gray-900 text-white" : "bg-gradient-to-r from-deep_twilight-500 to-bright_teal_blue-500 text-white"}`}
           >
             <p>{successMessage}</p>
             <button

@@ -14,16 +14,16 @@ function ProjectPage(props) {
   return (
     <div
       className={`h-max border p-4 rounded mx-auto transition-colors duration-300 ${
-        darkMode ? "bg-gray-700 text-white" : "bg-sky-100 text-black"
-      }`}
+            darkMode ? "bg-gray-700 text-white" : "bg-gradient-to-r from-deep_twilight-500 to-bright_teal_blue-500 text-white"
+          }`}
     >
       <h3 className="text-xl font-semibold">{title}</h3>
       <p>{description}</p>
       <a
         href={link}
         className={`hover:underline ${
-          darkMode ? "bg-gray-700 text-gray-400" : "bg-sky-100 text-sky-500"
-        }`}
+            darkMode ? "bg-gray-800 text-white" : "bg-gradient-to-r from-deep_twilight-500 to-bright_teal_blue-500 text-white"
+          }`}
       >
         View Project
       </a>

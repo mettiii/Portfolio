@@ -26,9 +26,9 @@ function TestimonyCard({ darkMode }) {
 
   return (
     <div
-      className={`container mx-auto p-6 transition-colors duration-300  ${
-        darkMode ? "bg-gray-800 text-white" : "bg-sky-100 text-black"
-      }`}
+      className={`container mx-auto p-6 transition-colors duration-300 ${
+            darkMode ? "bg-gray-800 text-white border border-gray-600 shadow-lg" : "bg-gradient-to-r from-deep_twilight-500 to-bright_teal_blue-500 text-white border border-gray-300 shadow-lg"
+          }`}
     >
       <h2 className="text-2xl font-bold mb-6">Testimonies</h2>
       <div
@@ -56,7 +56,7 @@ function TestimonyCard({ darkMode }) {
         <button
           onClick={prevTestimony}
           className={`absolute left-0 top-1/2 transform -translate-y-1/2 p-2 rounded ${
-            darkMode ? "bg-gray-700 text-white" : "bg-sky-100 text-black"
+            darkMode ? "bg-gray-800 text-white" : "bg-gradient-to-r from-deep_twilight-500 to-bright_teal_blue-500 text-white"
           }`}
         >
           Prev
@@ -64,7 +64,7 @@ function TestimonyCard({ darkMode }) {
         <button
           onClick={nextTestimony}
           className={`absolute right-0 top-1/2 transform -translate-y-1/2 p-2 rounded ${
-            darkMode ? "bg-gray-700 text-white" : "bg-sky-100 text-black"
+            darkMode ? "bg-gray-800 text-white" : "bg-gradient-to-r from-deep_twilight-500 to-bright_teal_blue-500 text-white"
           }`}
         >
           Next

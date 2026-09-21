@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import HomePage from "./component/HomePage.jsx";
 import About from "./component/AboutSection.jsx";
 import Footer from "./component/Footer.jsx";
@@ -8,27 +8,37 @@ import Header from "./component/Header.jsx";
 import ProjectCard from "./component/ProjectCard.jsx";
 import GitHubRepos from "./component/Repository.jsx";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 
 const AppContent = ({ darkMode }) => {
   return (
-    <div
-      className={`${
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      className={`min-h-screen pt-24 ${
         darkMode
-          ? "bg-gray-700 text-white min-h-screen"
-          : "bg-sky-100 text-black min-h-screen"
+          ? "bg-gradient-to-r from-gray-950 via-slate-900 to-gray-950 text-white"
+          : "bg-gradient-to-r from-deep_twilight-500 to-bright_teal_blue-500 text-white"
       }`}
     >
-      <Routes>
-        <Route path="/" element={<HomePage darkMode={darkMode} />} />
-        <Route path="/about-page" element={<About darkMode={darkMode} />} />
-        <Route path="/projects" element={<ProjectCard darkMode={darkMode} />} />
-        <Route path="/contact" element={<ContactPage darkMode={darkMode} />} />
-        <Route
-          path="/repositories"
-          element={<GitHubRepos darkMode={darkMode} />}
-        />
-      </Routes>
-    </div>
+      <section id="home" className="scroll-mt-24 my-12">
+        <HomePage darkMode={darkMode} />
+      </section>
+      <section id="about" className="scroll-mt-24 my-12">
+        <About darkMode={darkMode} />
+      </section>
+      <section id="projects" className="scroll-mt-24 my-12">
+        <ProjectCard darkMode={darkMode} />
+      </section>
+      <section id="repositories" className="scroll-mt-24 my-12">
+        <GitHubRepos darkMode={darkMode} />
+      </section>
+      <section id="contact" className="scroll-mt-24 my-12">
+        <ContactPage darkMode={darkMode} />
+      </section>
+      <Footer darkMode={darkMode} />
+    </motion.div>
   );
 };
 
@@ -40,11 +50,10 @@ function App() {
   };
 
   return (
-    <Router>
+    <>
       <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
       <AppContent darkMode={darkMode} />
-      <Footer darkMode={darkMode} />
-    </Router>
+    </>
   );
 }
 

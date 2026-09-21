@@ -1,42 +1,47 @@
-import myLogo from "../assets/A.png";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 function HomePage({ darkMode }) {
   return (
-    <div
-      className={`flex flex-col items-center justify-center min-h-screen transition-colors duration-300 ${
-        darkMode ? "bg-gray-700 text-white" : "bg-sky-100 text-black"
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      className={`flex min-h-screen flex-col items-center justify-center pt-20 transition-colors duration-300 ${
+        darkMode
+          ? "bg-gradient-to-r from-gray-900 via-slate-800 to-gray-950 text-white"
+          : "bg-gradient-to-r from-deep_twilight-500 to-bright_teal_blue-500 text-white"
       }`}
     >
-      <div className="mt-44 grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+      <div className="mt-8 grid grid-cols-1 gap-6 w-full max-w-5xl md:mt-12 md:grid-cols-2">
         <div className="flex flex-col items-start justify-start">
-          <div className="flex items-start mb-4">
-            <img
-              src={myLogo}
-              alt="Logo"
-              className="w-10 h-10 object-cover sm:w-10 sm:h-10"
-            />
-          </div>
-          <div className="text-5xl mb-2 font-extrabold">
+          <div className="text-5xl mb-2 font-extrabold drop-shadow-lg">
             Welcome To My Portfolio
           </div>
         </div>
-        <div className="flex flex-col justify-center p-10">
+        <div className="flex flex-col justify-center p-6 space-y-4">
           <p className="mb-4 text-3xl font-semibold">
-            I&apos;m a Web Developer
+            I&apos;m a Networking &amp; Cybersecurity Enthusiast
           </p>
-          <p className="mb-4 text-2xl">
-            I can help you build a product, feature, or website. Look through
-            some of my work and experience! If you like what you see and have a
-            project you need coded, don&apos;t hesitate to contact me.
+          <p className="mb-4 text-xl">
+            I specialize in building secure network architectures, penetration
+            testing, and developing resilient web applications.
           </p>
-          <p className="text-2xl">
-            Browse through my portfolio and see if I could be any assistance for
-            your upcoming projects.
-          </p>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => (window.location.href = "/contact")}
+            className={`px-6 py-3 font-bold rounded-lg shadow-md hover:opacity-90 ${
+              darkMode
+                ? "bg-gradient-to-r from-gray-900 via-slate-800 to-gray-950 text-white"
+                : "bg-gradient-to-r from-deep_twilight-500 to-bright_teal_blue-500 text-white"
+            }`}
+          >
+            Get in Touch
+          </motion.button>
         </div>
       </div>
       <div className="h-32"></div>
-    </div>
+    </motion.div>
   );
 }
 HomePage.propTypes = {

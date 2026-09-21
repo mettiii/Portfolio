@@ -38,7 +38,7 @@ function ProjectCard({ darkMode }) {
   return (
     <div
       className={`h-auto container mx-auto p-6 transition-colors duration-300 ${
-        darkMode ? "bg-gray-800 text-white" : "bg-sky-200 text-black"
+        darkMode ? "bg-gradient-to-r from-gray-800 to-gray-900 text-white" : "bg-gradient-to-r from-deep_twilight-500 to-bright_teal_blue-500 text-white"
       }`}
     >
       <h2 className="mt-16 text-2xl font-bold mb-6 pt-20">My Projects</h2>
@@ -69,7 +69,7 @@ function ProjectCard({ darkMode }) {
         <button
           onClick={prevProject}
           className={`absolute left-0 top-1/2 transform -translate-y-1/2 p-2 rounded ${
-            darkMode ? "bg-gray-700 text-white" : "bg-sky-100 text-black"
+            darkMode ? "bg-gray-700 text-white" : "bg-sky-100 text-white"
           }`}
         >
           Prev
@@ -77,7 +77,7 @@ function ProjectCard({ darkMode }) {
         <button
           onClick={nextProject}
           className={`absolute right-0 top-1/2 transform -translate-y-1/2 p-2 rounded ${
-            darkMode ? "bg-gray-700 text-white" : "bg-sky-100 text-black"
+            darkMode ? "bg-gray-700 text-white" : "bg-sky-100 text-white"
           }`}
         >
           Next

@@ -23,5 +23,12 @@ const projects = [
     description: "Job application app that is done by Java",
     link: "https://github.com/mettiii/Job-Application-App",
   },
+  {
+    key: 5,
+    title: "Network Monitoring Dashboard",
+    description:
+      "A React dashboard visualising live network traffic and security alerts.",
+    link: "https://github.com/mettiii/network-monitoring-dashboard",
+  },
 ];
 export default projects;
